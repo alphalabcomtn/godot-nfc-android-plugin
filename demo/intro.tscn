@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://intro.gd" type="Script" id=1]
+[ext_resource path="res://Ubuntu-Light.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 2 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 256.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 1080, 2400 )
+
+[node name="Label" type="Label" parent="CenterContainer"]
+margin_left = 455.0
+margin_top = 1172.0
+margin_right = 625.0
+margin_bottom = 1227.0
+custom_fonts/font = SubResource( 1 )
+text = "Loading"

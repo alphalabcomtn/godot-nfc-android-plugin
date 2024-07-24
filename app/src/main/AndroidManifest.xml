@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+package="tn.alphalab.godotandroidnfc">
+
+<!-- Declare the permissions your app needs -->
+<uses-permission android:name="android.permission.NFC"/>
+<uses-feature android:name="android.hardware.nfc" android:required="true"/>
+
+<application><!-- Declare the main activity -->
+    <!-- Meta-data for Godot plugin -->
+    <meta-data
+        android:name="org.godotengine.plugin.v1.GodotAndroidPlugin"
+        android:value="tn.alphalab.godotandroidnfc.GodotAndroidPlugin"/>
+</application>
+</manifest>

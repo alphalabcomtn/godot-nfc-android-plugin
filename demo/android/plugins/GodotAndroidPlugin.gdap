@@ -1,0 +1,9 @@
+[config]
+name="GodotAndroidPlugin"
+binary_type="local"
+binary="GodotAndroidPlugin.aar"
+
+[dependencies]
+
+local=["nxpnfcandroidlib-release-protected.aar"]
+remote=["com.madgag.spongycastle:pkix:1.54.0.0","com.madgag.spongycastle:prov:1.54.0.0","com.madgag.spongycastle:core:1.54.0.0","com.google.firebase:firebase-core:18.0.0"]

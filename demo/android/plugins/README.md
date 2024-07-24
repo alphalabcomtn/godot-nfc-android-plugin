@@ -1,0 +1,1 @@
+- add nxpnfcandroidlib-release-protected.aar here
