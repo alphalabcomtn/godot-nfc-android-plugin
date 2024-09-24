@@ -1,5 +1,11 @@
 # Adapt manifest.xml
 
+## application meta
+
+tools:replace="android:label" 
+
+## intent filter
+
 <intent-filter>
     <action android:name="android.intent.action.MAIN" />
     <category android:name="android.intent.category.LAUNCHER" />

@@ -17,6 +17,7 @@ import static tn.alphalab.godotandroidnfc.Constants.objKEY_2KTDES;
 import static tn.alphalab.godotandroidnfc.Constants.objKEY_2KTDES_ULC;
 import static tn.alphalab.godotandroidnfc.Constants.objKEY_AES128;
 import static tn.alphalab.godotandroidnfc.Constants.packageKey;
+import com.nxp.nfclib.desfire.DESFireFactory;
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -187,36 +188,23 @@ public class GodotAndroidPlugin extends GodotPlugin {
         }
         Log.e("ALPHA: cardLogic", "Known Card");
         switch (type) {
-
-            case Ultralight:
-                Log.e("ALPHA: cardLogic", "Ultralight");
-                break;
             case UltralightEV1_11:
             case UltralightEV1_21:
                 Log.e("ALPHA: cardLogic", "UltralightEV1_11/UltralightEV1_12");
-
+                cardData = mCardLogic.ultralightEV1CardLogic(this.activity, UltralightFactory.getInstance().getUltralightEV1(libInstance.getCustomModules()));
                 break;
             case UltralightC:
                 Log.e("ALPHA: cardLogic", "UltralightC");
                 cardData = mCardLogic.ultralightcCardLogic(this.activity, UltralightFactory.getInstance().getUltralightC(libInstance.getCustomModules()));
                 Log.e("ALPHA: cardLogic", cardData);
-
-                break;
-            case MIFAREUltralightAES:
-                Log.e("ALPHA: cardLogic", "MIFAREUltralightAES");
                 break;
             case DESFireEV2:
                 Log.e("ALPHA: cardLogic", "DESFireEV2");
+                cardData = mCardLogic.desfireEV2CardLogic(this.activity, DESFireFactory.getInstance().getDESFireEV2(libInstance.getCustomModules()));
                 break;
             case DESFireEV3:
                 Log.e("ALPHA: cardLogic", "DESFireEV2");
-                break;
-            case DESFireEV3C:
-                Log.e("ALPHA: cardLogic", "DESFireEV3C");
-                break;
-
-            case UltralightNano_48:
-                Log.e("ALPHA: cardLogic", "UltralightNano_48");
+                cardData = mCardLogic.desfireEV2CardLogic(this.activity, DESFireFactory.getInstance().getDESFireEV3(libInstance.getCustomModules()));
                 break;
         }
 //        To save the logs to file \sdcard\NxpLogDump\logdump.xml
