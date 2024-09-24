@@ -2,6 +2,9 @@ plugins {
     id "com.android.library"
 }
 
+ext.pluginVersionCode = 1
+ext.pluginVersionName = "1.0.0"
+
 android {
     namespace 'tn.alphalab.godotandroidnfc'
     compileSdk 34
@@ -25,6 +28,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    libraryVariants.configureEach { variant ->
+        variant.outputs.all { output ->
+            output.outputFileName = "GodotAndroidPlugin.$pluginVersionName.${variant.name}.aar"
+        }
+    }
 }
 
 dependencies {
@@ -37,6 +46,6 @@ dependencies {
     implementation group: 'com.madgag.spongycastle', name: 'pkix', version: '1.54.0.0'
     implementation group: 'com.madgag.spongycastle', name: 'prov', version: '1.54.0.0'
     implementation group: 'com.madgag.spongycastle', name: 'core', version: '1.54.0.0'
+    implementation group: 'org.godotengine', name: 'godot', version: '3.5.2.stable'
     compileOnly fileTree(dir:"libs", include:["nxpnfcandroidlib-release-protected.aar"])
-    compileOnly fileTree(dir:"libs", include:["godot-lib.3.5.3.stable.release.aar"])
 }
