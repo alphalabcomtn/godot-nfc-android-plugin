@@ -20,7 +20,7 @@
 
 - nxpnfcandroidlib-release-protected.aar
 
-# Credis
+# Credits
 
 - rezguimalek51@gmail.com
 

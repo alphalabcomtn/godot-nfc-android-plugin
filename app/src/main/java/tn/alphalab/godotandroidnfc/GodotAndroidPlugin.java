@@ -212,4 +212,10 @@ public class GodotAndroidPlugin extends GodotPlugin {
         emitSignal("send_data_to_godot", cardData);
     }
 
+    @UsedByGodot
+    public boolean isNfcSupported() {
+        NfcAdapter nfcAdapter = NfcAdapter.getDefaultAdapter(activity);
+        return (nfcAdapter != null);
+    }
+
 }
